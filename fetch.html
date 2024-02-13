@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <article>
+
+        </article>
+        <input type="button" value="fetch" onclick="
+            // fetch('css').then(function(response){                                                //인자의 파일을 서버로부터 요청하는 함수 fetch, fetch의 응답이 끝나면 인자로 들어있는 함수를 실행시켜주는 then
+            //     response.text().then(function(text){
+            //         document.querySelector('article').innerHTML = text;
+            //     })
+            // })
+
+            //Asynchronous
+            callbackme = function()                                                                 // 익명 함수 형태
+            {
+                console.log('response end')
+            }
+            fetch('html').then(function(response)                                                   // fetch 함수를 이용할 때 then 안에 들어있는 함수의 매개변수에는 response 객체를 집어넣는다.
+            {
+                console.log(response)
+            });                                                                                     // fetch는 비동기(Asynchronous) 함수이기 때문에 이 함수가 실행된 후 처리되기까지 밑에 있는 함수가 실행이 되지 않는 것이 아닌,
+            console.log(1);                                                                         // fetch 실행 후 밑에 있는 함수와 병렬적으로 작동한다.
+            console.log(2);
+            ">
+            
+    </body>
+</html>
